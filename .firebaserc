@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "car-pooling-b4b33": {
+      "hosting": {
+        "offerride": [
+          "car-pooling-b4b33"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "car-pooling-b4b33"
+  }
+}

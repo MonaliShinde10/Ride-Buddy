@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="d-flex flex-column my-3">
+                <p class="h8">Payment method</p>
+                <p class="text-muted">Choose your payment method to pay</p>
+            </div>
+            <div class="payment">
+                <a (click)="onSelectPayment('Cash')">
+                    <div class="btn btn-primary">
+                        <div>
+                            <span class="far fa-credit-card pay"></span>
+                            <span class="ps-3" style="font-size: 15px;"> Cash</span>
+                        </div>
+                        <span class="fas fa-arrow-right"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="payment">
+                <a (click)="onSelectPayment('BHM/UPI')">
+                    <div class="btn btn-primary">
+                        <div>
+                            <span class="fab fa-paypal pay"></span>
+                            <span class="ps-3" style="font-size: 15px;">BHM/UPI</span>
+                        </div>
+                        <span class="fas fa-arrow-right"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="payment">
+                <a (click)="onSelectPayment('Debit card')">
+                    <div class="btn btn-primary">
+                        <div>
+                            <span class="fab fa-bitcoin pay"></span>
+                            <span class="ps-3" style="font-size: 15px;">Debit card</span>
+                        </div>
+                        <span class="fas fa-arrow-right"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="payment">
+                <a (click)="onSelectPayment('Internet banking')">
+                    <div class="btn btn-primary">
+                        <div>
+                            <span class="fas fa-university pay"></span>
+                            <span class="ps-3" style="font-size: 15px;">Internet banking</span>
+                        </div>
+                        <span class="fas fa-arrow-right"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="qr-code-container" *ngIf="qrCodeUrl">
+            <img [src]="qrCodeUrl" alt="QR Code" class="qr-code" (click)="generatePdf()">
+        </div>
+    </div>
+</body>
+</html>

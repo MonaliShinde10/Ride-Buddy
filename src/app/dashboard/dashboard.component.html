@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+  .navbar {
+      background-color: #080808;
+  }
+
+  .navbar-brand {
+      color: white;
+      font-size: 1.5rem;
+      margin-right: 40px;
+  }
+
+  .spacer {
+      flex: 1;
+  }
+
+  .navbar button {
+      color: #8CC0DE;
+  }
+
+  @media (max-width: 768px) {
+      .navbar-brand {
+          font-size: 1.2rem;
+          margin-right: 20px;
+      }
+
+      .navbar button {
+          font-size: 0.8rem;
+      }
+  }
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container-fluid d-flex align-items-center">
+        <div class="navbar-brand">RIDE BUDDY</div>
+        <div class="spacer"></div>
+        <button type="button" class="btn" style="color: #8CC0DE;" (click)="dashlog()">Logout</button>
+    </div>
+</nav>
+  <div class="container-fluid">
+    <div class="row mt-5">
+      <div class="col"></div>
+      <div class="col-8">
+        <mat-card class="shadow">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon>list</mat-icon>
+            </div>
+            <mat-card-title>Offered Rides</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-grid-list cols="2" fxLayout="row wrap" fxLayoutGap="20px">
+              <mat-grid-tile *ngFor="let ride of rideOffers">
+                <mat-card>
+                  <mat-card-content>
+                    <div class="mb-3">
+                      <mat-icon>person</mat-icon> {{ ride.username }}
+                    </div>
+                    <div class="mb-3">
+                      <mat-icon>location_on</mat-icon> From: {{ ride.from }} | To: {{ ride.to }}
+                    </div>
+                    <div class="mb-3">
+                      <mat-icon>attach_money</mat-icon> Price: {{ ride.price }}
+                    </div>
+                    <div class="mb-3">
+                      <mat-icon>timeline</mat-icon> Distance: {{ ride.distance }} km
+                    </div>
+                    <div class="mb-3">
+                      <mat-icon>event_seat</mat-icon> Available Seats: {{ ride.seats }}
+                    </div>
+                    <div class="mb-3">
+                      <mat-icon>access_time</mat-icon> Departure Time: {{ ride.time }}
+                    </div>
+                    <hr>
+                    <div class="mb-3">
+                      <button mat-raised-button color="primary" routerLink="/payment">Accept</button>
+                    </div>
+                  </mat-card-content>
+                  
+                </mat-card>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+
+  <footer style="background-color: #212529;" class="footer section">
+    <div  class="quicklinks">
+        <h2 style="color: white;" class="title">
+            Quick Links
+        </h2>
+        <a href="#" class="">
+            Courses
+        </a>
+        <a href="#" class="link">
+            About
+        </a>
+        <a href="#" class="link">
+            Blog
+        </a>
+    </div>
+    <div  class="quicklinks">
+      <h2 style="color: white;" class="title">
+        Community
+      </h2>
+      <a href="" class="link">
+        Twitter
+    </a>
+    <a href="" class="link">
+      Instagram
+  </a>
+  <a href="" class="link">
+    Facebook
+</a>
+  </div>
+  <div  class="quicklinks">
+    <h2 style="color: white;" class="title">
+      Documents
+    </h2>
+    <a href="" class="link">
+      Privacy Policy
+  </a>
+  <a href="" class="link">
+    Terms and Conditions
+</a>
+<a href="" class="link">
+  Legal Terms
+</a>
+</div>
+  
+    <div class="Copyright">
+       
+        <span> © TubeCurate {{currentYear}}</span><br> All Rights Reserved.
+    </div>
+</footer>
+</body>
+</html>
+
+  
